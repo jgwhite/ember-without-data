@@ -9,6 +9,9 @@ Note that this app contains some concessions and compromises to working
 with a CSV data source. The post describes a more abstract and idealised
 scenario.
 
+Thanks to [LuckyMe](http://thisisluckyme.com), your catalogue makes a
+great dataset.
+
 ---
 
 ### A Quick Question for Ember’s Core Team
