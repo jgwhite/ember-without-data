@@ -1,0 +1,146 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout --- */
+
+.pane {
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#header {
+  top: 0; right: 0; bottom: auto; left: 0;
+  z-index: 2;
+  height: 50px;
+}
+
+#main {
+  top: 50px; right: 0; bottom: 40px; left: 0;
+}
+
+#footer {
+  top: auto; right: 0; bottom: 0; left: 0;
+  height: 40px;
+}
+
+#master {
+  top: 0; right: auto; bottom: 0; left: 0;
+  border-right: 1px solid #ddd;
+  width: 20em;
+  overflow: auto;
+
+  background: white;
+}
+
+#detail {
+  top: 0; right: 0; bottom: 0; left: 20em;
+  overflow: auto;
+}
+
+/* --- Header --- */
+
+header {
+  border-bottom: 1px solid #ddd;
+
+  background: #eee;
+  color: #aaa;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0 1em;
+
+  font-size: 1em;
+  line-height: 50px;
+}
+
+header a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+/* --- Footer --- */
+
+footer {
+  border-top: 1px solid #ddd;
+  padding: 0 1em;
+
+  font-size: 0.75em;
+  font-weight: bold;
+  line-height: 40px;
+
+  background: #eee;
+  color: #aaa;
+}
+
+a {
+  color: inherit;
+}
+
+/* --- Article --- */
+
+article {
+  padding: 0;
+}
+
+article h1 {
+  margin: 0;
+  padding: 0.5em 1em;
+
+  font-size: 1em;
+  font-weight: normal;
+
+  background: black;
+  color: white;
+}
+
+article img {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+article .art {
+  margin: 1em;
+}
+
+article .soundcloud {
+  margin: 1.618em;
+}
+
+/* --- Nav --- */
+
+nav {}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none outside;
+}
+
+nav li {
+  margin: 0;
+}
+nav li:nth-child(odd) { background: #fff }
+nav li:nth-child(even) { background: #f2f2f2 }
+
+nav a, span {
+  display: block;
+  padding: 0.5em 1em;
+
+  text-decoration: none;
+  color: inherit;
+}
+nav a.active {
+  background: #5891dc;
+  color: white;
+}

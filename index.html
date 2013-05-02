@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Without Data</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <header class="pane" id="header">
+      <h1>
+        {{#linkTo records}}Ember Without Data{{/linkTo}} (A Demo App)
+      </h1>
+    </header>
+    <section class="pane" id="main">
+      {{outlet}}
+    </section>
+    <footer class="pane" id="footer">
+      <a href="https://github.com/jgwhite/ember-without-data">View source on GitHub</a>
+      &mdash;
+      <a href="https://docs.google.com/spreadsheet/pub?key=0Aqx7vtK6RxxZdHhPM2RGTGlvTjZjeko2aWU4bDFDTGc&output=html">View dataset</a>
+    </footer>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="records">
+    <section class="pane" id="master">
+      <nav>
+        <ul>
+          {{#each model}}
+            <li>
+              {{#linkTo record this}}
+                <strong>{{artist}}</strong> {{name}}
+              {{/linkTo}}
+            </li>
+          {{else}}
+            <li><span>Loading…</span></li>
+          {{/each}}
+        </ul>
+      </nav>
+    </section>
+    <section class="pane" id="detail">
+      {{outlet}}
+    </section>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="records/index">
+    <article>
+      <h1>Pick an item from the list to see more detail.</h1>
+    </article>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="record">
+    <article>
+      {{#if isLoaded}}
+        <h1><strong>{{artist}}</strong> {{name}}</h1>
+        <section class="art">
+          <img {{bindAttr src=art}}>
+        </section>
+        <section class="soundcloud">
+          {{{soundcloudEmbed}}}
+        </section>
+      {{else}}
+        <h1>Loading…</h1>
+      {{/if}}
+    </article>
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/jquery.csv-0.71.min.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
