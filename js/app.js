@@ -92,4 +92,9 @@ App.RecordStore = Ember.Object.extend({
 
 });
 
-App.Record.store = App.RecordStore.create();
+App.initializer({
+  name: 'store',
+  initialize: function() {
+    App.Record.store = App.RecordStore.create();
+  }
+});
